@@ -1,0 +1,48 @@
+.layui-nav-item span,
+.layui-icon-app {
+  margin-right: 5px;
+}
+iframe {
+  width: 100%;
+  height: 100%;
+}
+.layui-body {
+  overflow: hidden;
+}
+.layui-nav-child a {
+  margin-left: 15px;
+}
+.userinfo {
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  font-size: 12px;
+  user-select: none;
+  padding-right: 20px;
+}
+.layui-side-scroll .user-info-box {
+  border-bottom: 1px solid #23262e;
+}
+.layui-nav-img {
+  position: relative;
+  top: -3px;
+}
+.text-avatar {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 50%;
+  font-size: 20px;
+  color: #fff;
+  background-color: #009688;
+  vertical-align: middle;
+}
+.layui-nav-img {
+  display: none;
+}
+.layui-footer {
+  text-align: center;
+  font-size: 12px;
+}
