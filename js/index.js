@@ -5,15 +5,15 @@ $(function(){
         $.ajax({
             type:'get',
             url:'/my/userinfo',
-            headers:{
-                Authorization:localStorage.getItem('token')
-            },
+            // headers:{
+            //     Authorization:localStorage.getItem('token')
+            // },
             success:function(res){
                 if(res.code!=0){
                     return layer.msg(res.message);
                 }
                 renderAvatar(res.data)
-            }
+            },
         })
     }
     //渲染用户头像
@@ -29,4 +29,12 @@ $(function(){
             $('.text-avatar').text(name[0].toUpperCase());
         }
     }
+    //退出登录
+    $('#exit').click(function(){
+        layer.confirm('确认退出登录？',{icon:3,title:'提示'},function(index,layero){
+            localStorage.removeItem('token');
+            location.href='login.html';
+            layer.close(index);
+        })
+    })
 })
