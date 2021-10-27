@@ -1,0 +1,44 @@
+body {
+  padding: 15px;
+}
+.layui-card-body {
+  width: 500px;
+}
+.row1 {
+  display: flex;
+  margin-bottom: 50px;
+}
+.row1 .cropper {
+  width: 350px;
+  height: 350px;
+  background-color: #ccc;
+  overflow: hidden;
+}
+.row1 .show {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+.row1 .show .big div {
+  width: 100px;
+  height: 100px;
+  background-color: #ccc;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.row1 .show .small div {
+  width: 50px;
+  height: 50px;
+  background-color: #ccc;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.row1 .show p {
+  text-align: center;
+  font-size: 14px;
+}
+.row2 input {
+  display: none;
+}
