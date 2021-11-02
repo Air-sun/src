@@ -3,10 +3,9 @@ $(function(){
     getInfo();
     //退出登录
     $('#exit').click(function(){
-        layer.confirm('确认退出登录？',{icon:3,title:'提示'},function(index,layero){
+        layer.confirm('确认退出登录？',{icon:3,title:'提示'},function(){
             localStorage.removeItem('token');
             location.href='login.html';
-            layer.close(index);
         })
     })
 })

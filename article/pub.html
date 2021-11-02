@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../lib/layui/css/layui.css">
+    <link rel="stylesheet" href="../css/publish.css">
+</head>
+
+<body>
+    <div class="layui-card">
+        <div class="layui-card-header">
+            <p>写文章</p>
+        </div>
+        <div class="layui-card-body">
+            <form class="layui-form" id="publish">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">文章标题</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="title" required lay-verify="required" placeholder="请输入文章标题"
+                            autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">文章类别</label>
+                    <div class="layui-input-block">
+                        <select name="cate_id">
+                            <!-- <option value="">请选择文章类别</option>
+                            <option value="0">已发布</option>
+                            <option value="1">草稿</option> -->
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-form-item layui-form-text">
+                    <label class="layui-form-label">文章内容</label>
+                    <div class="layui-input-block">
+                        <textarea name="content" class="layui-textarea"></textarea>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">文章封面</label>
+                    <div class="layui-input-block">
+                        <div class="layui-inline cover-img"><img src="../images/cover.jpg" alt=""></div>
+                        <button type="button" class="layui-btn layui-btn-danger" id="choose">选择封面</button>
+                        <input type="file" style="display: none;" class="choose">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <button class="layui-btn" lay-submit >发布</button>
+                        <button class="layui-btn layui-btn-primary" lay-submit id="save">存为草稿</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- <script type="text/html" id="tbody">
+        {{each data}}
+        <tr>
+            <td><a href="javascript:;" style="color: blue;" data-id="{{$value.id}}">{{$value.title}}</a></td>
+            <td>{{$value.cate_name}}</td>
+            <td>{{$value.pub_date|date}}</td>
+            <td>{{$value.state}}</td>
+            <td>
+                <button type="button" class="layui-btn layui-btn-danger layui-btn-xs delBtn" data-id="{{$value.id}}">删除</button>
+            </td>
+        </tr>
+        {{/each}}
+    </script>
+    <script type="text/html" id="detail">
+    <div class="detail-box">
+       <h2>{{data.title}}</h2>
+       <ul>
+           <li>作者：{{data.username}}</li>
+           <li>发布时间：{{data.pub_date|date}}</li>
+           <li>所属分类：{{data.cate_name}}</li>
+           <li>状态：{{data.state}}</li>
+       </ul>
+       <div>
+           <img src="http://www.liulongbin.top:3008{{data.cover_img}}" alt="">{{@data.content}}
+       </div>
+    </div>
+    </script> -->
+    <script type="text/html" id="option">
+        <option value="">请选择文章类别</option>
+        {{each data}}
+        <option value="{{$value.id}}">{{$value.cate_name}}</option>
+        {{/each}}
+    </script>
+</body>
+<script src="../lib/layui/layui.all.js"></script>
+<script src="../lib/tinymce/tinymce.min.js"></script>
+<script src="../lib/tinymce/tinymce_setup.js"></script>
+<script src="../lib/template-web.js"></script>
+<script src="../lib/jquery.js"></script>
+<script src="../js/base.js"></script>
+<script src="../js/publish.js"></script>
+</html>

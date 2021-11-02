@@ -1,0 +1,10 @@
+.layui-form-item .cover-img {
+  width: 400px;
+  height: 280px;
+  vertical-align: top;
+  overflow: hidden;
+  margin-right: 15px;
+}
+.layui-form-item .cover-img img {
+  width: 100%;
+}

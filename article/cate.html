@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../lib/layui/css/layui.css">
+    <link rel="stylesheet" href="../css/cate.css">
+</head>
+
+<body>
+    <div class="layui-card">
+        <div class="layui-card-header">
+            <span>文章类别管理</span>
+            <button type="button" class="layui-btn layui-btn-normal layui-btn-sm">添加分类</button>
+        </div>
+        <div class="layui-card-body">
+            <table class="layui-table">
+                <colgroup>
+                    <col width="200">
+                    <col>
+                    <col>
+                    <col width="200">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>分类名称</th>
+                        <th>分类别名</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <button type="button" class="layui-btn layui-btn-xs">修改</button>
+                            <button type="button" class="layui-btn layui-btn-danger layui-btn-xs">删除</button>
+                        </td>
+                    </tr> -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script type="text/html" id="tbody">
+        {{each data}}
+        <tr>
+            <td>{{$index+1}}</td>
+            <td>{{$value.cate_name}}</td>
+            <td>{{$value.cate_alias}}</td>
+            <td>
+                <button type="button" class="layui-btn layui-btn-xs" id="editBtn" data-id="{{$value.id}}">修改</button>
+                <button type="button" class="layui-btn layui-btn-danger layui-btn-xs" id="delBtn">删除</button>
+            </td>
+        </tr>
+        {{/each}}
+    </script>
+    <script type="text/html" id="add">
+        <form class="layui-form" id="addForm">
+            <div class="layui-form-item">
+              <label class="layui-form-label">分类名称</label>
+              <div class="layui-input-block">
+                <input type="text" name="cate_name" required  lay-verify="required" placeholder="请输入分类名称" maxlength="10" autocomplete="off" class="layui-input">
+              </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">分类别名</label>
+                <div class="layui-input-block">
+                  <input type="text" name="cate_alias" required  lay-verify="required" oninput="value=value.trim()" placeholder="请输入分类别名" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                  <button class="layui-btn" lay-submit lay-filter="formDemo">确认添加</button>
+                  <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </div>
+        </form>
+    </script>
+    <script type="text/html" id="edit">
+        <form class="layui-form" lay-filter="form-edit" id="editForm">
+            <input type="hidden" name="id">
+            <div class="layui-form-item">
+              <label class="layui-form-label">分类名称</label>
+              <div class="layui-input-block">
+                <input type="text" name="cate_name" required  lay-verify="required" placeholder="请输入分类名称" autocomplete="off" maxlength="10" class="layui-input">
+              </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">分类别名</label>
+                <div class="layui-input-block">
+                  <input type="text" name="cate_alias"  required  lay-verify="required" oninput="value=value.trim()" placeholder="请输入分类别名" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                  <button class="layui-btn" lay-submit>确认修改</button>
+                </div>
+            </div>
+        </form>
+    </script>
+</body>
+<script src="../lib/layui/layui.all.js"></script>
+<script src="../lib/template-web.js"></script>
+<script src="../lib/jquery.js"></script>
+<script src="../js/base.js"></script>
+<script src="../js/cate.js"></script>
+
+</html>
